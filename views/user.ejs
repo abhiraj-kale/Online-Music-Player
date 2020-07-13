@@ -1,0 +1,675 @@
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>App</title>
+          <link rel="stylesheet" href="/stylesheets/user.css">
+        <div class="topbar">
+            <div class="topbar-left">
+                <tr>
+                    <td>
+                  <a href="#" id="home">Home</a>
+                    </td>
+                    <td>
+                  <a href="#" id="downloaded">Downloaded</a>
+                    </td>
+                  <a href="#" id="playlists" >Playlists</a>
+                    </td>
+                    <td>
+                        <a href="#" id="about">About</a>
+                    <td>
+                </tr>
+            </div>
+            <div class="topbar-right">
+                <tr>
+                    <input type="search" id ="search" placeholder="Search by Title/Artist...">
+                  <td> 
+                        <a href="#"><img style=" height: 25px; width: 25px;" src="/images/profile-icon.png" id="profile-icon"></a>
+                  </td>
+                <td>
+                    <a href="#" id="log-out">Log out</a>
+                 </td>
+                </tr>
+            </div>
+          </div>
+    </head>
+    <script src="/javascripts/jquery.js"></script> 
+    <body>
+    <div class="player">
+            <div  class="left-div"></div>
+            <div  class="center-div">
+                
+                <div class="display-area">
+                    <div class="display">
+                        <h1 id="about_head"></h1> <label id="matching-label"></label>
+                        <p class="display-para">
+                            <div class="poster-display">
+                                <video width="650" height="350" id="video1" autoplay loop>
+                                    <source class="myslides" src="/images/Poster.mp4" type="video/mp4">
+                                  Your browser does not support the video tag.
+                                  </video>
+                            </div>
+                        </p>
+                        <p class="display-contents">
+                            <table id="search-contents" class="search-contents">
+                                <tr>
+                                    <th>TITLE</th>
+                                    <th>ARTIST</th>
+                                    <th>DURATION</th>
+                                    <th></th>
+                                </tr>
+                            </table>
+                        </p>   
+                        <div id="hoverdiv">
+                            <a href="" download="" class="download-link"><input type="button" value="Download" id="download"></a><br>
+                            <input type="button" value="Add to Queue" id="queue"> <br>
+                            <input type="button" value="Add to playlist" id="playlist" class="playlist">
+                        </div>
+                        <p class="display-downloaded-contents">
+                            <table class="search-downloaded-contents">
+                                <tr>
+                                    <th>TITLE</th>
+                                    <th>ARTIST</th>
+                                    <th>DURATION</th>
+                                </tr>
+                            </table>
+                        </p>
+                        <p class="display-playlist-contents">
+                            <table class="search-playlist-contents">
+                                <tr>
+                                    <th>TITLE</th>
+                                    <th>ARTIST</th>
+                                    <th>DURATION</th>
+                                </tr>
+                            </table>
+                        </p>
+                        <div class="change_details_username">
+                            <label class="status"></label>
+                            <h3 class="old" id="old_u">Enter existing username</h3>
+                            <input class="old_details" type="text" placeholder="Enter username.." id="old_details_u"> <!-- Old Username-->
+                            <h3 class="new" id="new_u">Enter new username</h3>
+                            <input type="text" placeholder="Enter username.." id="new_details_u"> <!-- New Username-->
+                            <h3 class="confirm-pass-lbl" id="confirm-pass-lbl_u">Confirm password</h3>
+                            <input type="password" class="confirm-pass-inp" id="confirm-pass_inp_u" placeholder="Enter Password.."><!--Password-->
+                            <input type="submit" value="Update info" id="update-info-1" class="update-info">
+                        </div>
+                        <div class="change_details_password">
+                            <label class="status"></label>
+                            <h3 id="user_p">Enter your username</h3>
+                            <input type="text" placeholder="Enter username.." id="user_details_p"> <!-- Username-->
+                            <h3 class="old" id="old_p">Enter old password</h3>
+                            <input class="old_details" type="password"  placeholder="Enter old Password" id="old_details_p"> <!-- Old Password-->
+                            <h3 class="new" id="new_p">Enter new Password</h3>
+                            <input type="password"  placeholder="Enter new Password" id="new_details_p"> <!-- New Password-->
+                            <input type="submit" value="Update info" id="update-info-2" class="update-info">
+                        </div>
+                        <div class="change_details_email">
+                            <label class="status"></label>
+                            <h3 id="user_e">Enter your username</h3>
+                            <input type="text" placeholder="Enter username.." id="user_details_e"> <!-- Username-->
+                            <h3 class="old" id="old_e">Enter old Email</h3>
+                            <input class="old_details" type="text" placeholder="Enter email" id="old_details_e"> <!-- Old E-Mail-->
+                            <h3 class="new" id="new_e">Enter new Email</h3>
+                            <input  type="text" placeholder="Enter email" id="new_details_e"> <!-- New E-Mail-->
+                            <h3 class="confirm-pass-lbl" id="confirm-pass-lbl_e">Confirm Password</h3>
+                             <input type="password" placeholder="Confirm password" class="confirm-pass-inp" id="confirm-pass_inp_e"><!--Password-->
+                            <input type="submit" value="Update info" id="update-info-3" class="update-info">
+                        </div>
+                    </div>
+                </div>
+                <div class="welcome-div">
+                    <h1 class="header"><%= name %></h1>
+                    <h2 class="welcome_time"></h2>
+                </div>
+                <div class="audio">
+                        <figcaption id="figcaption"></figcaption>
+                        <audio id="controls" controls autoplay >
+                         <source type="audio/mpeg" src="" id="src" >
+                        </audio>    
+                </div> 
+            </div>
+            <div  class="right-div" >
+                <div class="right_display">
+                   <label id="profile-head">Profile</label><br>
+                   <label  id="user-name"><%= name %></label>
+                   <hr>
+                   <div id="profile-options">
+                    <input type="button" class="btn" id="change-name" value="Change Username">
+                    <input type="button" class="btn" id="change-password" value="Change password">
+                    <input type="button" class="btn" id="change-email" value="Change E-mail">
+                   
+                   </div>
+                   <div id="log-out-option">
+                    <input type="button" value="Yes" class="btn" id="yes">
+                    <input type="button" value="No" class="btn" id="no">
+                    
+                   </div> 
+                   <strong><input type="button" value="Close" id="slide-up-btn"></strong>
+                </div>
+            </div>
+            <br style="clear: left;" />   <link rel="shortcut icon" href="#" />
+    </div>
+
+    <script>
+        // Preventing the user to log-in with the back button
+        $(document).ready(function() {
+         function disablePrev() { window.history.forward() }
+         window.onload = disablePrev();
+         window.onpageshow = function(evt) { if (evt.persisted) {disableBack();alert('Please Log-in to view');}  }
+         
+      });
+      
+        // Declaring a global variable for songs object
+        var song; var user_downloads; var user_playlists; var count=0; var flag=0; var top_val = 0; var list = ['']; var i=0;
+        // Setting Name and time on Welcome page.
+        $(document).ready(function() { 
+            setInterval(() => {
+                var dt = (new Date()).toString();  
+           $('.welcome_time').html(dt);   
+            }, 1); 
+        $('#matching-label').css({'display':'none'});
+        $('#search-contents').css({'display':'none'});
+        $('.display-contents').css({'display':'none'});
+        $('.display-playlist-contents').css({'display':'none'}); 
+        $('.search-playlist-contents').css({'display':'none'});
+        $('.display-downloaded-contents').css({'display':'none'});
+        $('.search-downloaded-contents').css({'display':'none'})
+        $('#about_head').css({'display':'none'});
+        $('.display-para').css({'display':'none'});
+        $('.poster-display').css({'display':'block'});
+        $('.change_details_username').css({'display': 'none'});
+        $('.change_details_password').css({'display': 'none'});
+        $('.change_details_email').css({'display': 'none'});
+         // Making AJAX call to the server and getting Songs 
+         $.ajax
+            (
+            {
+                url: "/account/songs",
+                type: "POST",
+                dataType: "text",
+                contentType: 'application/json',
+                success: function (data) {
+                    song = JSON.parse(data);
+                    
+                },
+                error: function (data) {
+                    console.error('Couldn\'t receive songs from server');
+                }
+            }
+            ); 
+       });
+
+        //  Code for displaying the home page.
+       $('#home').click(function () {
+        $('#matching-label').css({'display':'none'});
+        $('#search-contents').css({'display':'none'});
+        $('.display-contents').css({'display':'none'});
+        $('.display-playlist-contents').css({'display':'none'}); 
+        $('.search-playlist-contents').css({'display':'none'});
+        $('.display-downloaded-contents').css({'display':'none'});
+        $('.search-downloaded-contents').css({'display':'none'})
+        $('#about_head').css({'display':'none'});
+        $('.display-para').css({'display':'none'});
+        $('.poster-display').css({'display':'block'});
+        $('.change_details_username').css({'display': 'none'});
+        $('.change_details_password').css({'display': 'none'});
+        $('.change_details_email').css({'display': 'none'});
+       });
+
+       // Displaying the user his downloaded songs
+       var flag2=0; var flag3 = 0; 
+       $('#downloaded').click(function() {
+        $('.display-downloaded-contents').css({'display':'block'}); 
+        $('.search-downloaded-contents').css({'display':'block'});
+        $('.display-playlist-contents').css({'display':'none'}); 
+        $('.search-playlist-contents').css({'display':'none'});
+        $('.display-para').css({'display':'none'});
+        $('.display-contents').css({'display':'none'});
+        $('.poster-display').css({'display':'none'});
+        $('#about_head').css({'display':'block'}).html('Downloaded').addClass('highlight');  
+        $('#matching-label').css({'display':'block'}).html('Your downloaded songs will be displayed here.');
+        $('.change_details_username').css({'display': 'none'});
+        $('.change_details_password').css({'display': 'none'});
+        $('.change_details_email').css({'display': 'none'});
+
+        // Making AJAX call to the server and getting downloaded Songs  
+       
+            var pagename= location.pathname.split('/').pop(); 
+        $.ajax
+            (
+            {
+                url: "/account/"+pagename+'/downloads',
+                type: "POST",
+                dataType: "text",
+                contentType: 'application/json',
+                success: function (data) {
+                   user_downloads = JSON.parse(data); console.log(user_downloads);
+                    $('#matching-label').html('Your downloaded songs will be displayed here.');
+                    if (flag2 == 0){
+                    user_downloads.forEach((item)=>{ 
+                    $('.search-downloaded-contents').append("<tr id='table-row2'><td>"+item.songname+"</td><td>"+item.artist+"</td><td>"+item.duration+"</td><td></tr>");
+                    flag2 = 1;
+                    });
+                    }
+                        if($('.search-downloaded-contents').is(':empty')){
+                            $('.display-para').css({'display':'block'}).html('You haven\'t downloaded any songs');
+                        }
+                $('.display').slideDown(600); 
+                },
+                error: function (data) {
+                    console.error('Couldn\'t receive downloaded songs from server for user id '+pagename);
+                }
+            }
+            );
+        });
+
+       var flag4 = 0; 
+        // When user clicks the Playlist button
+        $('#playlists').click(function() { 
+        $('.search-playlist-contents').css({'display':'block'});
+        $('.display-playlist-contents').css({'display':'block'}); 
+        $('.display-downloaded-contents').css({'display':'none'}); 
+        $('.search-downloaded-contents').css({'display':'none'});
+        $('.display-para').css({'display':'none'});
+        $('.display-contents').css({'display':'none'});
+        $('.poster-display').css({'display':'none'});
+        $('#about_head').css({'display':'block'}).html('Playlist').addClass('highlight');  
+        var user__name = $('#user-name').text(); 
+        $('#matching-label').css({'display':'block'}).html('Your Playlist : ');
+        $('.change_details_username').css({'display': 'none'});
+        $('.change_details_password').css({'display': 'none'});
+        $('.change_details_email').css({'display': 'none'});
+
+        // Making AJAX call to the server and getting  Playlists and Songs 
+        var page_name= location.pathname.split('/').pop(); console.log('Pagename : '+ page_name);
+        console.log('/account/playlist/'+page_name);
+        $.ajax
+            (
+            {
+                url: '/account/playlist/'+page_name,
+                type: "GET",
+                dataType: "text",
+                contentType: 'application/json',
+                success: function (data) {
+                    user_playlists = JSON.parse(data); console.log(user_playlists);
+                    if (flag4 == 0){
+                        user_playlists.forEach((item)=>{ 
+                    $('.search-playlist-contents').append("<tr><td><a href='#' class='song_name'>"+item.songname+"</a></td><td>"+item.artist+"</td><td>"+item.duration+"</td><td></tr>");
+                    flag4 = 1;
+                    });
+                    }
+                        if($('.search-playlist-contents').is(':empty')){
+                            $('.display-para').css({'display':'block'}).html('You don\t have any playlists');
+                        }
+                $('.display').slideDown(600);
+                $('.song_name').css({'color':'white','text-decoration':'none'}).click(function () {
+                    top_val=0; i=0; 
+                    list =[''];
+                    list[ 0 ] = $(this).html();
+                play_song2(i,list);
+                });
+
+                var audio2 = $("#controls");
+                    audio2[0].onended = (event) => {
+                        console.log((i+1),list);
+                    play_song2(++i,list);
+                };
+
+                function play_song2(j,list_songs){ 
+                        var a = list_songs [j]; console.log(list_songs[j]);
+                        $("#src").attr("src",'');
+                        song.forEach((item,index)=>{
+                        if(a == item.songname || a == item.reference){    
+                        audio2[0].pause();
+                        $('#figcaption').html(item.reference);
+                        $("#src").attr("src", '/Songs/'+item.reference+'.mp3');
+                        audio2[0].load();//suspends and restores all audio element      
+                        audio2[0].play();
+                        }
+                    }); 
+                }
+                },
+                error: function (data) {
+                    console.error('Couldn\'t receive playlist from server for user id '+page_name);
+                }
+            }
+            );   
+                
+        });
+      
+
+        //   When user clicks the search bar
+       $('#search').click(function() { 
+        $('.display-para').css({'display':'none'});
+        $('.poster-display').css({'display':'none'});
+        $('.display-playlist-contents').css({'display':'none'}); 
+        $('.search-playlist-contents').css({'display':'none'});
+           $('#about_head').html('Search').addClass('highlight');
+           $('#matching-label').css({'display':'block'});
+           $('.display-contents').css({'display':'block','overflow-y':'block'});
+           $('.display-downloaded-contents').css({'display':'none'});
+           $('#search-contents').css({'display':'block'});
+           $('.search-downloaded-contents').css({'display':'none'})
+           $('#matching-label').html('Please enter some text in the Search Bar.');
+           $('.display').slideDown(600);
+           $('.change_details').css({'display': 'none'});  
+           $('.change_details_username').css({'display': 'none'});
+        $('.change_details_password').css({'display': 'none'});
+        $('.change_details_email').css({'display': 'none'});
+        }); 
+
+        //  Code for displaying the about page when user clicks the about link.
+        $('#about').click(function() {
+            $('.change_details_username').css({'display': 'none'});
+        $('.change_details_password').css({'display': 'none'});
+        $('.change_details_email').css({'display': 'none'});
+            $('#matching-label').css({'display':'none'});
+            $('.poster-display').css({'display':'none'});
+            $('#search-contents').css({'display':'none'});
+            $('.display-playlist-contents').css({'display':'none'}); 
+           $('.search-playlist-contents').css({'display':'none'});
+            $('.search-downloaded-contents').css({'display':'none'})
+            $('.display-contents').css({'display':'none'});
+            $('.display-downloaded-contents').css({'display':'none'})
+            $('.display-para').css({'display':'block','overflow-y':'hidden'});
+            $('#about_head').css({'display':'block'}).html('About').addClass('highlight');
+            $('.display-para').html('This is an online audio-player API which allows the user to stream songs online .The user can search for songs of his own choice, create playlists and even download the song if he wishes to. Scripting of the template is made with the help of HTML,CSS and JQUERY, and server side scripting is managed by Express (A Node.js Framework).Note that this is just a sample API and may not be reproduced for commercial use without the permission of the owner. Any unauthorized use would not be tolerated .  ~ Designed and developed by Abhiraj Kale.');
+            $('.display').slideDown(600);
+            
+       });
+
+      
+
+
+       //   Searching if what user enters in the search bar matches the received songs list    
+       $('#search').keyup(function() { 
+       $('#search-contents').html("<tr><th>TITLE</th><th>ARTIST</th><th>DURATION</th></tr>");
+        var input = $(this).val();
+        var length = $(this).val().length;
+        var flag = 0;
+        $('.display-contents').css({'overflow-y':'scroll'});
+        if(length>0){
+            song.forEach((item,index)=>{ 
+                var str = item.songname.toLowerCase();
+                var artistname = item.artist.toLowerCase();
+                if((str.includes(input.toLowerCase())==true) || (artistname.includes(input.toLowerCase())==true)){
+                    $('#search-contents').css({'display':'block'});
+                   $('#matching-label').html('Following are the results for \''+input+'\':'); 
+                   $('#search-contents').append("<tr id='table-row'><td><a href='#' class='song-name'>"+item.songname+"</a></td><td>"+item.artist+"</td><td>"+item.duration+"</td><td><img class='three-dots' id='"+item.reference+"' src='/images/three dots.png'><td></tr>");
+                   flag = 1;
+                }
+                if (flag != 1){
+                    $('#matching-label').html('There are no songs matching \''+input+'\'');
+                }
+            });
+        }else{
+            $('#matching-label').html('Please enter some text in the Search Bar.');
+        }
+        $('.song-name').css({'color':'white','text-decoration':'none'}).click(function () {
+            top_val=0; i=0; 
+            list =[''];
+            list[ 0 ] = $(this).html();
+           play_song(i,list);
+        });
+
+        var audio = $("#controls");
+            audio[0].onended = (event) => {
+                console.log((i+1),list);
+            play_song(++i,list);
+        };
+
+        function play_song(j,list_songs){ 
+                var a = list_songs [j]; console.log(list_songs[j]);
+                $("#src").attr("src",'');
+                song.forEach((item,index)=>{
+                if(a == item.songname || a == item.reference){    
+                audio[0].pause();
+                $('#figcaption').html(item.reference);
+                $("#src").attr("src", '/Songs/'+item.reference+'.mp3');
+                audio[0].load();//suspends and restores all audio element      
+                audio[0].play();
+                }
+            }); 
+         }
+             var id;
+            // Displaying the add to playlist and download options
+            $('.three-dots').click(function(e) {
+                 id = $(this).attr('id'); 
+                var hovertext = $(this).attr('hovertext');
+                $('#hoverdiv').text(hovertext).fadeIn(200);
+                $('#hoverdiv').css('top',e.clientY+1).css('left',e.clientX+1);
+                $('.download-link').attr('href',('/Songs/'+id+'.mp3')).attr('download',($(this).attr('id')+'.mp3')).click(function(){
+                    song.forEach((item,index) => {
+                        if( id == item.reference || id == item.songname){
+                            var song_id;
+                            var pagename= location.pathname.split('/').pop(); 
+                            jQuery.ajax({
+                                url: '/account/'+pagename+'/'+item.id,
+                                type: "POST",
+                                data: { song_id : JSON.stringify(item.id)  },
+                                dataType: "json",
+                                beforeSend: function(x) {
+                                    if (x && x.overrideMimeType) {
+                                    x.overrideMimeType("application/j-son;charset=UTF-8");
+                                    }
+                                },
+                                success: function(result) {
+                                //Write your code here
+                                console.log('User\'s download uploaded to server.');
+                                }
+                        });
+                       }
+                    });
+                    $('#hoverdiv').text(hovertext).fadeOut(200); 
+                });
+                //
+            });
+                $('#playlist').click(function(){
+                    song.forEach((item,index) => { 
+                        if( id == item.reference){
+                            var songid;
+                            var page_name= location.pathname.split('/').pop();  console.log('sending now');
+                            jQuery.ajax({
+                                url: '/account/'+page_name+'/playlists/'+item.id,
+                                type: "POST",
+                                data: { songid : JSON.stringify(item.id)  },
+                                dataType: "json",
+                                beforeSend: function(x) {
+                                    if (x && x.overrideMimeType) {
+                                    x.overrideMimeType("application/j-son;charset=UTF-8");
+                                    }
+                                },
+                                success: function(result) {
+                                //Write your code here
+                                console.log('User\'s playlist uploaded to server.');
+                                }
+                        });
+                       }
+                    });
+                    $('#hoverdiv').fadeOut(200); 
+                });
+               
+            
+            $('#queue').click(function(){console.log('clicked once');
+                 ++top_val; 
+                 list[top_val]=id;  
+             }).click(function(){
+                    $('#hoverdiv').fadeOut(200); 
+                });
+
+            $(document).mouseup(function (e){
+            var container = $("#hoverdiv");
+            if (!container.is(e.target) && container.has(e.target).length === 0){
+                container.fadeOut(200);
+            }
+            });
+        
+         });
+        // When user wants to hide the profile/log out option
+        $('#slide-up-btn').click(function () {
+        $('.right_display').slideUp(300);
+       });
+       
+       // When user tries to view and change his profile
+        $('#profile-icon').click(function() {
+            $('.right_display').slideDown(300);
+            $('#log-out-option').css({ 'display' : 'none' });
+            $('#profile-options').css({ 'display' : 'block' });
+            $('#profile-head').html('Profile');
+            $('#user-name').html($('header').html());
+        });
+
+        // Updating User's username 
+        $('#change-name').click(function() {
+        $('.change_details_username').css({'display': 'block'});
+        $('.change_details_password').css({'display': 'none'});
+        $('.change_details_email').css({'display': 'none'});
+        $('#about_head').css({'display':'block'}).html('Change Username').addClass('highlight');
+        $('#search-contents').css({'display':'none'});
+        $('.display-contents').css({'display':'none'});
+        $('.display-playlist-contents').css({'display':'none'}); 
+        $('.search-playlist-contents').css({'display':'none'});
+        $('.display-downloaded-contents').css({'display':'none'});
+        $('.search-downloaded-contents').css({'display':'none'})
+        $('#matching-label').css({'display':'none'});
+        $('.display-para').css({'display':'none'});
+        $('.poster-display').css({'display':'none'});
+        $('.status').css({'display':'none'});
+        
+           $('#update-info-1').click(function() { 
+           var formData = {oldname:$('#old_details_u').val(),newname:$('#new_details_u').val(),password:$('#confirm-pass_inp_u').val()}; 
+           console.log( JSON.stringify(formData));
+            var pagename = location.pathname.split('/').pop(); console.log('id : '+pagename);
+                               jQuery.ajax({
+                                url: '/account/changedetails-username',
+                                type: "POST",
+                                data: {formData} ,
+                                dataType: "json",
+                                success: function(result) {
+                                //Write your code here
+                                console.log('User\'s sent to server.');
+                                if(result==1){
+                                    $('.status').css({'color':'green','display':'block'}).html('Details updated.');
+                                    setTimeout(function(){ 
+                                    alert('Please Log-in to continue');
+                                    }, 1000);
+                                    setTimeout(function(){
+                                        window.location.replace("/login");
+                                    },2000)
+                                }else if(result==2){
+                                    $('.status').css({'color':'red','display':'block'}).html('Invalid Credentials.');
+                                }
+                                }
+                        });
+             });
+        });
+        //Updating password
+        $('#change-password').click(function() {
+        $('.change_details_username').css({'display': 'none'});
+        $('.change_details_password').css({'display': 'block'});
+        $('.change_details_email').css({'display': 'none'});
+        $('#about_head').css({'display':'block'}).html('Change Password').addClass('highlight');
+        $('#search-contents').css({'display':'none'});
+        $('.display-contents').css({'display':'none'});
+        $('.display-playlist-contents').css({'display':'none'}); 
+        $('.search-playlist-contents').css({'display':'none'});
+        $('.display-downloaded-contents').css({'display':'none'});
+        $('.search-downloaded-contents').css({'display':'none'})
+        $('#matching-label').css({'display':'none'});
+        $('.display-para').css({'display':'none'});
+        $('.poster-display').css({'display':'none'});
+        $('.status').css({'display':'none'});
+
+        $('#update-info-2').click(function() { 
+           var formData = {username:$('#user_details_p').val(),oldpass:$('#old_details_p').val(),newpass:$('#new_details_p').val()}; 
+           console.log( JSON.stringify(formData));
+            var pagename = location.pathname.split('/').pop(); console.log('id : '+pagename);
+                               jQuery.ajax({
+                                url: '/account/changedetails-password',
+                                type: "POST",
+                                data: {formData} ,
+                                dataType: "json",
+                                success: function(result) {
+                                //Write your code here
+                                console.log('User\'s details sent to server.');
+                                if(result==1){
+                                    $('.status').css({'color':'green','display':'block'}).html('Details updated.');
+                                    setTimeout(function(){ 
+                                    alert('Please Log-in to continue');
+                                    }, 1000);
+                                    setTimeout(function(){
+                                        window.location.replace("/login");
+                                    },2000)
+                                }else if(result==2){
+                                    $('.status').css({'color':'red','display':'block'}).html('Invalid Credentials.');
+                                }
+                                }
+                        });
+             });
+        });
+
+        //Updating E - Mail
+        $('#change-email').click(function() {
+        $('.change_details_username').css({'display': 'none'});
+        $('.change_details_password').css({'display': 'none'});
+        $('.change_details_email').css({'display': 'block'});
+        $('#about_head').css({'display':'block'}).html('Change E-Mail').addClass('highlight');
+        $('#search-contents').css({'display':'none'});
+        $('.display-contents').css({'display':'none'});
+        $('.display-playlist-contents').css({'display':'none'}); 
+        $('.search-playlist-contents').css({'display':'none'});
+        $('.display-downloaded-contents').css({'display':'none'});
+        $('.search-downloaded-contents').css({'display':'none'})
+        $('#matching-label').css({'display':'none'});
+        $('.display-para').css({'display':'none'});
+        $('.poster-display').css({'display':'none'});
+        $('.status').css({'color':'green','display':'block'}).html('Scroll for the complete form');
+        $('#update-info-3').click(function() { 
+           var formData = {username:$('#user_details_e').val(),oldemail:$('#old_details_e').val(),newemail:$('#new_details_e').val(),password:$('#confirm-pass_inp_e').val()}; 
+           console.log( JSON.stringify(formData));
+            var pagename = location.pathname.split('/').pop(); console.log('id : '+pagename);
+                               jQuery.ajax({
+                                url: '/account/changedetails-email',
+                                type: "POST",
+                                data: {formData} ,
+                                dataType: "json",
+                                success: function(result) {
+                                //Write your code here
+                                console.log('User\'s details sent to server.');
+                                 if(result==1){
+                                    $('.status').css({'color':'green','display':'block'}).html('Details updated.');
+                                    $('.change_details_email').scrollTop(0);
+                                    setTimeout(function(){ 
+                                    alert('Please Log-in to continue');
+                                    }, 1000);
+                                    setTimeout(function(){
+                                        window.location.replace("/login");
+                                    },2000)
+                                }else if(result==2){
+                                    $('.status').css({'color':'red','display':'block'}).html('Invalid Credentials.');
+                                }
+                                }
+                        });
+             });
+        });
+
+        // Displaying log-out option to user
+        $('#log-out').click(function() {
+            $('.right_display').slideDown(300);
+            $('#profile-options').css({ 'display' : 'none' });
+            $('#log-out-option').css({ 'display' : 'block' });
+            $('#profile-head').html('Log out?');
+            $('#user-name').html($('header').html());
+        });
+        // If user clicks yes to log out
+        $('#yes').click(function() {
+            window.location = '/logout';
+        });
+        //  If user clicks no to log out, slide-up
+        $('#no').click(function() {
+            $(".right_display").slideUp();
+        });
+
+    </script>
+    <footer class="footer">~ Created by Abhiraj Kale.</footer>
+    </body>
+</html>

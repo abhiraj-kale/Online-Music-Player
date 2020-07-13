@@ -1,0 +1,158 @@
+[
+    { 
+        "id": "1",
+        "songname": "Bandit",
+        "artist" : "Juice WRLD",
+        "duration": "3:09",
+        "reference": "Bandit-Juice WRLD ft. NBA YoungBoy"
+    },
+    { 
+        "id": "2",
+        "songname": "Calm Down",
+        "artist" : "G-Eazy",
+        "duration": "2:12",
+        "reference": "Calm Down-G-Eazy"
+    },
+    { 
+        "id": "3",
+        "songname": "Changes",
+        "artist" : "XXXTENTACION",
+        "duration": "2:01",
+        "reference": "Changes-XXXTENTACION"
+    },
+    { 
+        "id": "4",
+        "songname": "Cheap Thrills",
+        "artist" : "Sia",
+        "duration": "4:21",
+        "reference": "Cheap Thrills-Sia ft. Sean Paul"
+    },
+    { 
+        "id": "5",
+        "songname": "Everyday",
+        "artist" : "Logic ft.Marshmello",
+        "duration": "3:25",
+        "reference": "EVERYDAY - Marshmello & Logic"
+    },
+    { 
+        "id": "6",
+        "songname": "Fake Friends",
+        "artist" : "Bazanji",
+        "duration": "2:24",
+        "reference": "Fake friends- Bazanji"
+    },
+     
+    { 
+        "id": "7",
+        "songname": "Fed Up",
+        "artist" : "Bazanji",
+        "duration": "2:40",
+        "reference": "Fed Up - By Bazanji"
+    },
+    { 
+        "id": "8",
+        "songname": "Homicide",
+        "artist" : "Logic ft.Eminem",
+        "duration": "4:05",
+        "reference": "Homicide-Logic(ft. Eminem)"
+    },
+    { 
+        "id": "9",
+        "songname": "I love",
+        "artist" : "Joyner Lucas",
+        "duration": "3:29",
+        "reference": "I Love-Joyner Lucas"
+    },
+    { 
+        "id": "10",
+        "songname": "I Mean it",
+        "artist" : "G-Eazy",
+        "duration": "3:57",
+        "reference": "I Mean It-G-Eazy ft. Remo"
+    },
+    { 
+        "id": "11",
+        "songname": "ISIS",
+        "artist" : "Joyner Lucas ft.Logic",
+        "duration": "4:04",
+        "reference": "Isis - Joyner Lucas"
+    },
+    { 
+        "id": "12",
+        "songname": "Keanu Reaves",
+        "artist" : "Logic",
+        "duration": "3:46",
+        "reference": "Keanu Reeves-Logic"
+    },
+    { 
+        "id": "13",
+        "songname": "Let Me Love You",
+        "artist" : "DJ Snake",
+        "duration": "3:25",
+        "reference": "Let Me Love You-DJ Snake ft. Justin Bieber"
+    },
+    
+    { 
+        "id": "14",
+        "songname": "Lucky You",
+        "artist" : "Eminem",
+        "duration": "4:04",
+        "reference": "Lucky You-Eminem (ft. Joyner Lucas)"
+    },
+    { 
+        "id": "15",
+        "songname": "Me, Myself and I",
+        "artist" : "G-Eazy x Bebe Rexha",
+        "duration": "5:48",
+        "reference": "Me, Myself & I - G-Eazy x Bebe Rexha"
+    },
+    { 
+        "id": "16",
+        "songname": "Memories in My Head",
+        "artist" : "Lil Tecca",
+        "duration": "3:11",
+        "reference": "Memories in My Head"
+    },
+    { 
+        "id": "17",
+        "songname": "MOONLIGHT",
+        "artist" : "XXXTENTACION",
+        "duration": "2:11",
+        "reference": "MOONLIGHT -XXXTENTACION"
+    },
+    { 
+        "id": "18",
+        "songname": "Panini",
+        "artist" : "Lil Nas X ft.Dababy",
+        "duration": "1:55",
+        "reference": "Panini-Lil Nas X ft.Dababy"
+    },
+    { 
+        "id": "19",
+        "songname": "Rainy Days",
+        "artist" : "Boogie ft.Eminem",
+        "duration": "4:16",
+        "reference": "Rainy Days-Boogie ft. Eminem"
+    },
+    { 
+        "id": "20",
+        "songname": "Ransom",
+        "artist" : "lil Tecca",
+        "duration": "2:11",
+        "reference": "Ransom-Lil Tecca"
+    },
+    { 
+        "id": "21",
+        "songname": "SAD",
+        "artist" : "XXXTENTACION",
+        "duration": "2:46",
+        "reference": "SAD -XXXTENTACION"
+    },
+    { 
+        "id": "22",
+        "songname": "SAUCE!",
+        "artist" : "XXXTENTACION",
+        "duration": "2:24",
+        "reference": "SAUCE!-XXXTENTACION"
+    }
+]

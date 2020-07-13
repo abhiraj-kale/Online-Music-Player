@@ -1,0 +1,355 @@
+/* Style the header with a grey background and some padding */
+/* Add a black background color to the top navigation */
+.topbar {
+    float: left;
+    text-align: center;
+    height:7%;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    background-color:rgb(15, 14, 14); 
+  }
+  .topbar-left{
+      float: left;
+      padding: 5px;;
+  }
+  #search{
+    margin-right: 25px;
+    border-radius: 5px 5px;
+    padding: 2px;
+}
+  .topbar-right{
+      float:right;
+      padding: 5px;
+  }
+ 
+  /* Style the links inside the navigation bar */
+  .topbar a {
+    font-family: Intro, Segoe UI, Open Sans, Arial, sans-serif;
+    float: center;
+    height: 6px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    color: white;
+    text-align: bottom;
+    text-decoration: none;
+    font-size: 22px;
+    transition: 0.3s;
+  }
+  
+  /* Change the color of links on hover */
+  .topbar a:hover {
+    color: rgb(13, 108, 146);
+  }
+  html{
+    background-color: rgb(9, 10, 10);
+    height: 600px;
+  }
+.player{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(31, 34, 34);
+}
+.left-div{
+    float: left;
+    height: 100%;
+    width: 15%;
+    background-color: rgb(12, 12, 12)
+}
+.center-div{
+    float: left;
+    height: 100%;
+    width: 70%;
+    background-color: rgb(31, 34, 34);
+}
+.right-div{
+    float: left;
+    height: 100%; 
+    width: 15%;
+    background-color: rgb(12, 12, 12)
+}
+
+.display-area{
+    height: 63%;
+    width: 95%;
+    background-color: rgb(31, 34, 34);
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 2px solid black;
+}
+.audio{
+    height: 25%;
+    background-color: rgb(20, 20, 20);
+}
+
+.header{
+    margin-left: 5% ;
+    padding-top: 10px;
+    margin-top: 2px;
+    font-size: 30px;
+    font-family: Intro, Segoe UI, Open Sans, Arial, sans-serif;
+    color: rgb(37, 136, 153);
+}
+
+.welcome_time{
+    margin-left: 5% ;
+    font-size: 20px ;
+    font-family: Intro, Segoe UI, Open Sans, Arial, sans-serif;
+    color:rgb(37, 136, 153);
+}
+#controls{
+    margin-top: 10px;
+    margin-left:10%;
+    color: turquoise;
+    width: 80%;
+}
+audio { 
+    width: 600px; 
+    box-shadow: 5px 5px 20px rgba(0,0, 0, 0.4);
+    border-radius: 90px;
+    transform: scale(1.05);
+    animation-duration: 1s;
+    outline:none !important;
+  }
+
+  figcaption{
+      margin-left: 10%;
+      padding:10px;
+      color: white;
+      font-size: 20px;
+  }
+  .display{
+      height: 95%;
+  }
+
+  .display-para , .display-contents , .display-downloaded-contents, .display-playlist-contents{
+    font-family: Intro, Segoe UI, Open Sans, Arial, sans-serif;
+      color :white;
+      font-size: 20px;
+      width: 100%;
+  }
+
+  .display-contents ,.display-downloaded-contents , .display-playlist-contents { 
+    height: 70% ;
+    padding-bottom: 5px;;
+    overflow-y: scroll;
+} 
+
+  .poster-display, .myslides{
+      width: 650px;
+      height: 350px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+ ::-webkit-scrollbar {
+    width: 16px;
+    border: 5px solid white;
+  
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #0e809c;
+    background-clip: padding-box;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #bbbbbb;
+  }
+  /* Buttons */
+  ::-webkit-scrollbar-button:single-button {
+    background-color: #bbbbbb;
+    display: block;
+    border-style: solid ;
+    height: 13px;
+    width: 16px;
+  }
+  /* Up */
+  ::-webkit-scrollbar-button:single-button:vertical:decrement {
+    border-width: 0 8px 8px 8px;
+    border-color: transparent transparent #035f5b transparent;
+  }
+  
+  ::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+    border-color: transparent transparent rgb(9, 147, 156) transparent;
+  }
+  /* Down */
+  ::-webkit-scrollbar-button:single-button:vertical:increment {
+    border-width: 8px 8px 0 8px;
+    border-color: #035f5b transparent transparent transparent;
+  }
+  
+  ::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+    border-color: rgb(9, 147, 156) transparent transparent transparent;
+  }
+  #about_head {
+      color: rgb(37, 136, 153);
+      font-weight: lighter;
+  }
+  .poster-display{
+    display: none;
+  }
+  #matching-label{
+    font-size: 25px;
+    color: rgb(37, 136, 153);
+    font-weight: lighter;
+}  
+
+.old , .new ,.confirm-pass-lbl , #user_p , #user_e {
+  color: rgb(233, 227, 227);
+  font-weight: lighter;
+  font-family: Intro, Segoe UI, Open Sans, Arial, sans-serif;
+}
+
+.old_details , .new_details , .confirm-pass-inp {
+  height: 25px;
+  border: 1px solid black;
+  margin-top: 0px;
+}
+  #hoverdiv , #hoverdiv2 {
+    display: none;
+    position: absolute;
+    font-size: 14px;
+    background-color:rgb(63, 61, 61) ;
+    color: rgb(243, 229, 229);
+    border: 1 px solid black;
+    padding: 7px;
+  }
+
+  #playlist-name{
+    background-color: rgb(218, 207, 207);
+    margin-top: 1px;
+    color: rgba(5, 5, 5, 0.932);
+    border: 1 px solid black;
+    height: 15px;
+    width: 95%;
+    border-radius: 0.5px solid black;
+    position: absolute;
+    font-size: 14px;
+    padding: 7px;
+  }
+   .update-info{
+    background-color:rgb(37, 136, 153);
+    color: white;
+    border: black;
+    height: 25px;
+    width: 5cm;
+    outline:none !important;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 16px;
+    margin-left: 30px;
+ } 
+   #download , #playlist , #queue , #create-playlist {
+    background-color: transparent;
+    border: 0cm;
+    padding: 3.5px;
+    color: white;
+    outline:none !important;
+    text-align: center;
+  }
+  .change_details_email{
+    overflow-y: scroll;
+    height: 85% ;
+    color: green;
+    font-size:larger;
+  }
+
+  .status{
+    margin-left: 40%;
+    font-weight: lighter;
+    letter-spacing: 2px;
+  }
+  .right_display{
+    display: none;
+    border-bottom: white;
+    width: 90%;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-top: 0%;
+    color: rgb(245, 236, 236);
+    background-color: rgb(47, 51, 51);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+#slide-up-btn{
+    width: 100%;
+    height: 18px;
+    margin-top: 5px;
+    background-color:rgb(37, 136, 153);
+    color: black;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    outline:none !important;
+}
+
+  #profile-head{
+      font-size: 25px;
+      font-family: Intro, Segoe UI, Open Sans, Arial, sans-serif;
+      color: rgb(245, 236, 236);
+  }
+  
+  #user-name{
+      font-size: 20px;
+      font-family: Intro, Segoe UI, Open Sans, Arial, sans-serif;
+      color: rgb(37, 136, 153);
+  }
+
+.btn{
+      font-size: 15px;
+      background-color: rgb(47, 51, 51);
+      color:rgb(245, 236, 236); 
+      margin-left: auto;
+      margin-right: auto;
+      border-width: 0ch;
+      padding: 5px;
+      outline:none !important;
+      transition: 0.3s;
+  }
+
+.btn:hover{
+    color: rgb(37, 136, 153);
+}
+
+  hr{ 
+    height: 2px;
+    border: none;
+    background-color:  rgb(19, 19, 19);
+  }
+
+  #yes , #no {
+      width: 45%;
+  }
+
+  #search-contents , .search-contents ,.search-downloaded-contents{
+      display: none;
+      height: 92%;
+      width: 100%;
+      padding-right: 10px;
+  }
+
+  th{
+      text-align: left;
+      width: 50%;
+      height: 15px;
+      color: rgb(245, 236, 236); 
+      font-size: 20px;
+  }
+  td{
+      border-top: 2px  solid black;
+      color: rgb(245, 236, 236); ;
+  }
+
+  .highlight{
+      border-bottom: 1px solid white;
+  }
+  footer{
+    color: blanchedalmond;
+   font-size: 14px;
+   margin-bottom: 0px;
+    font-weight: lighter;
+    text-align: right;
+  }
